@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_stadium_state_clean
+    description: "Stadium linked with the cleaned state name it is situated in"
+  - name: int_restaurant_categories
+    description: "Cleaned restaurant category data"
+  - name: tbl_stadium_clean
+    description: "Clean stadium, league and team data"
+  - name: tbl_restaurant_clean
+    description: "Clean restaurant data linked to its associated stadium"

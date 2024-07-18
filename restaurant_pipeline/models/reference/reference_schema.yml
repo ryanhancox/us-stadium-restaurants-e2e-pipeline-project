@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: ref_state_codes
+    description: "Reference table for US State codes"
+    columns:
+      - name: code
+        description: "The US State code"
+        data_tests:
+          - unique
+          - not_null
+      - name: state
+        description: "The US State name"
+        data_tests:
+          - unique
+          - not_null
+      - name: abbreviation
+        description: "The abbreviation for the US State name"
+        data_tests:
+          - unique
+          - not_null
