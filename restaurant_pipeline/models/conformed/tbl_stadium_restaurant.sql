@@ -10,10 +10,11 @@ tbl_restaurant_clean as (
 
 final as (
 
-    select
+    select distinct
 
         tbl_stadium.stadium_id as fk_stadium_id,
-        tbl_restaurant_clean.restaurant_id as fk_restaurant_id
+        tbl_restaurant_clean.restaurant_id as fk_restaurant_id,
+        tbl_restaurant_clean.distance_from_stadium
 
     from tbl_stadium
     inner join tbl_restaurant_clean

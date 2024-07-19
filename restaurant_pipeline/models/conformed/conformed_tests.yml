@@ -1,0 +1,102 @@
+version: 2
+
+models:
+  - name: tbl_category
+    description: "Restaurant category types"
+    columns:
+      - name: category_id
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('tbl_restaurant_category')
+              field: fk_category_id
+
+  - name: tbl_restaurant_category
+    description: "Joining table between Restaurant and Category"
+    columns:
+      - name: restaurant_category_id
+        data_tests:
+          - not_null
+          - unique
+      - name: fk_restaurant_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('tbl_restaurant')
+              field: restaurant_id
+      - name: fk_category_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('tbl_category')
+              field: category_id
+
+  - name: tbl_restaurant
+    description: "Contains data regarding restaurants within a given radius of a stadium"
+    columns:
+      - name: restaurant_id
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('tbl_stadium_restaurant')
+              field: 'fk_restaurant_id'
+              to: ref('tbl_restaurant_category')
+              field: 'fk_restaurant_id'
+      - name: restaurant_name
+        data_tests:
+          - not_null
+
+  - name: tbl_stadium_restaurant
+    description: "Joining table between Stadium and Restaurant"
+    columns:
+      - name: stadium_restaurant_id
+        data_tests:
+          - unique
+          - not_null
+      - name: fk_restaurant_id
+        data_tests:
+          - relationships:
+              to: ref('tbl_restaurant')
+              field: restaurant_id
+      - name: fk_stadium_id
+        data_tests:
+          - relationships:
+              to: ref('tbl_stadium')
+              field: stadium_id
+
+  - name: tbl_stadium
+    description: "Stadium data"
+    columns:
+      - name: stadium_id
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('tbl_stadium_restaurant')
+              field: fk_stadium_id
+              to: ref('tbl_team')
+              field: fk_stadium_id
+      - name: stadium_name
+        data_tests:
+          - not_null
+        
+  - name: tbl_team
+    description: "Team data with corresponding league"
+    columns:
+      - name: team_id
+        data_tests:
+          - unique
+          - not_null
+      - name: fk_stadium_id
+        data_tests:
+          - relationships:
+              to: ref('tbl_stadium')
+              field: staidum_id
+      - name: team_name
+        data_tests:
+          - not_null 
+
+          
+
