@@ -1,0 +1,6 @@
+astronomer-cosmos
+apache-airflow-providers-snowflake
+kaggle
+azure-core
+azure-blob-storage
+dbt-snowflake
