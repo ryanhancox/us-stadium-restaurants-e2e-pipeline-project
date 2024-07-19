@@ -52,7 +52,7 @@ unnested_restaurants as (
     lateral flatten (input => businesses) b
 ),
 
-final as (
+clean_categories as (
 -- Un-nest the category data for each restaurant and group back into a clean array
 
     select
@@ -82,6 +82,44 @@ final as (
     from unnested_restaurants,
     lateral flatten (input => raw_category_array) raw_cat
     group by all
+),
+
+final as (
+-- Remove duplicate restaurant entries
+
+    select distinct
+
+        stadium,
+        restaurant_id,
+        restaurant_name,
+        is_closed,
+        -- duplicate restaurants with differing reviews/ratings
+        last_value(num_reviews) over (partition by restaurant_id order by num_reviews) as num_reviews,
+        last_value(restaurant_rating) over (partition by restaurant_id order by num_reviews) as restaurant_rating,
+
+        case 
+            when price_bracket is not null then price_bracket
+            else 'Not Available'
+        end as price_bracket,
+
+        -- duplicate restaurants where one doesn't contain phone numbers
+        max(phone_number) over (partition by restaurant_id) as phone_number,
+        max(display_phone) over (partition by restaurant_id) as display_phone,
+        address_line_1,
+        address_line_2,
+        address_line_3,
+        zip_code,
+        restaurant_city,
+        restaurant_state,
+        display_address,
+        -- duplicate restaurants with slightly different lat/longs
+        max(restaurant_longitude) over (partition by restaurant_id) as longitude,
+        max(restaurant_latitude) over (partition by restaurant_id) as latitude,
+        max(distance_from_stadium) over (partition by restaurant_id) as distance_from_stadium,
+        restaurant_categories
+
+    from clean_categories
+
 )
 
 select * from final

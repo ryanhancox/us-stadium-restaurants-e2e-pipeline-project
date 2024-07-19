@@ -93,7 +93,7 @@ models:
         data_tests:
           - relationships:
               to: ref('tbl_stadium')
-              field: staidum_id
+              field: stadium_id
       - name: team_name
         data_tests:
           - not_null 
