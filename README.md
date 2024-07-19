@@ -68,4 +68,5 @@ Given the above questions, the following Snowflake dashboard was produced by que
 * Determine a practical method to ingest data into Azure Blob Storage without having to intermediately having to store it on your local machine (file share?).
 * Use a Snowflake Snowpipe for continuous data loading from Azure Blob Storage
 * Use a dbt seed file for the `state_code.csv` reference data instead of manually uploading into Snowflake
+* Wrap project into a Docker container and deploy to an Azure VM
 * Look to use a better data visualisation tool (sorry Snowflake) for the data analysis and visualisation. Create a variety of visualisation including geographic visualisation using the geographic data available in the dataset.
