@@ -1,8 +1,0 @@
-version: 2
-
-sources:
-  - name: raw
-    database: us_restaurants
-    schema: raw
-    tables:
-      - name: raw_state_codes

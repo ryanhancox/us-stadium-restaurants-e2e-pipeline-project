@@ -1,0 +1,42 @@
+[0m15:54:37.467529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACEBF0C550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACEBBA9490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACEBECAA10>]}
+
+
+============================== 15:54:37.472735 | 523b1ba4-de78-4838-bfda-7d13bbe848c5 ==============================
+[0m15:54:37.472735 [info ] [MainThread]: Running with dbt=1.8.3
+[0m15:54:37.472735 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\RyanHancox\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt init', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:55:00.331232 [debug] [MainThread]: Starter project path: C:\virtual_envs\DE_env\Lib\site-packages\dbt\include\starter_project
+[0m15:55:00.418624 [info ] [MainThread]: 
+Your new dbt project "restaurant_pipeline" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:55:00.421637 [info ] [MainThread]: Setting up your profile.
+[0m16:00:02.924734 [info ] [MainThread]: Profile restaurant_pipeline written to C:\Users\RyanHancox\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m16:00:02.927732 [debug] [MainThread]: Command `dbt init` succeeded at 16:00:02.927732 after 325.54 seconds
+[0m16:00:02.928732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACD7293F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACEBECECD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACD729C050>]}
+[0m16:00:02.929933 [debug] [MainThread]: Flushing usage events
+[0m16:05:16.368803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F59514F410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F59517A290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F59514F550>]}
+
+
+============================== 16:05:16.379770 | c55dad99-e08b-46ad-b502-e0498a73b836 ==============================
+[0m16:05:16.379770 [info ] [MainThread]: Running with dbt=1.8.3
+[0m16:05:16.379770 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\RyanHancox\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --select tbl_stadium', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:05:16.379770 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\RotatorBench\Projects\us-restaurant-azure-snowflake\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m16:05:16.379770 [debug] [MainThread]: Command `dbt run` failed at 16:05:16.379770 after 0.08 seconds
+[0m16:05:16.379770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F580558190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F59519FE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F59519FED0>]}
+[0m16:05:16.379770 [debug] [MainThread]: Flushing usage events
